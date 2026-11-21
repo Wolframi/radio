@@ -1,0 +1,23 @@
+{
+  "name": "@streamer-radio/web-player",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5174",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@streamer-radio/protocol": "workspace:*",
+    "@streamer-radio/shared": "workspace:*",
+    "obs-websocket-js": "^5.0.6",
+    "react": "^19.0.1",
+    "react-dom": "^19.0.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.1.0"
+  }
+}

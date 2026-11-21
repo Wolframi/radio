@@ -1,0 +1,27 @@
+{
+  "name": "@streamer-radio/server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@streamer-radio/protocol": "workspace:*",
+    "@streamer-radio/shared": "workspace:*",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "pino": "^9.6.0",
+    "zod": "^3.24.2"
+  },
+  "optionalDependencies": {
+    "webtransport-bun": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/bun": "^1.2.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "typescript": "^5.7.2"
+  }
+}

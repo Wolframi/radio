@@ -1,0 +1,6 @@
+{
+  "name": "Streamer Radio",
+  "description": "Low-latency personal audio router for streamers with multi-branch OBS scene switching, WebTransport/Opus streaming, viewer track orders, and admin management.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

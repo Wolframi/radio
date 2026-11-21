@@ -1,0 +1,16 @@
+{
+  "name": "streamer-radio",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:server": "bun run --cwd apps/server dev",
+    "dev:desktop": "bun run --cwd apps/desktop dev",
+    "dev:player": "bun run --cwd apps/web-player dev",
+    "dev:admin": "bun run --cwd apps/admin dev",
+    "build:all": "bun run --cwd apps/web-player build && bun run --cwd apps/admin build && bun run --cwd apps/desktop build",
+    "certs:dev": "bash scripts/gen-dev-certs.sh"
+  }
+}

@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+data/
+!data/users.example.json
+streamer-radio/data/*
+!streamer-radio/data/users.example.json
+certs/
+streamer-radio/certs/

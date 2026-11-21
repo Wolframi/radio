@@ -1,0 +1,27 @@
+services:
+  streamer-radio-server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    container_name: streamer-radio-server
+    restart: unless-stopped
+    ports:
+      - "4433:4433/tcp" # HTTPS / HTTP2 + REST + WebSocket fallback
+      - "4433:4433/udp" # HTTP/3 QUIC + WebTransport (same port as HTTP/2)
+    environment:
+      NODE_ENV: production
+      PORT: "4433"
+      DATA_DIR: /app/data
+      TLS_CERT_PATH: /app/certs/cert.pem
+      TLS_KEY_PATH: /app/certs/key.pem
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      LOG_LEVEL: info
+    volumes:
+      - ./data:/app/data
+      - ./certs:/app/certs:ro
+    healthcheck:
+      test: ["CMD", "curl", "-skf", "https://127.0.0.1:4433/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
